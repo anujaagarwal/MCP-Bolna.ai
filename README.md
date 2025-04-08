@@ -16,21 +16,8 @@ Additionally, this repository includes instructions on how to integrate the MCP 
 - Python 3.7 or higher
 - Install the required dependencies:
   ```bash
-
-     # Create a new directory for our project
-    uv init bolna
-    cd bolna
-
-    # Create virtual environment and activate it
-    uv venv
-    source .venv/bin/activate
-
-    # Install dependencies
-    uv add "mcp[cli]" httpx
-
-    # Create our server file
-    touch bolna.py
-  
+    # Install uv
+      curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
 - **Bolna API Key**: You will need an API key from the [Bolna AI platform](https://platform.bolna.ai) to authenticate API requests.
@@ -47,7 +34,10 @@ cd BolnaVoiceAI-MCP
 ### 2. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+    # Create virtual environment and activate it
+        uv venv
+        source .venv/bin/activate
+        uv add "mcp[cli]" httpx
 ```
 
 ### 3. Configure Your Bolna API Key
@@ -63,7 +53,7 @@ API_KEY = "your_bolna_api_key"  # Replace with your actual Bolna API key
 Once everything is set up, you can run the server:
 
 ```bash
-python bolna_mcp_server.py
+uv run bolna.py
 ```
 
 The server will start and expose the following tools for interaction:
